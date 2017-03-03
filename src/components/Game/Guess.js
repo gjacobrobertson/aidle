@@ -1,7 +1,5 @@
 import React, {PropTypes} from 'react'
 import {green500} from 'material-ui/styles/colors'
-import escape from 'escape-html'
-
 
 const Guess = ({value, score}) => {
   const style = {
@@ -11,7 +9,7 @@ const Guess = ({value, score}) => {
   }
   return (
 
-    <div className="guess" style={style}>
+    <div className='guess' style={style}>
       {value.map((char, index) =>
         <span key={index} style={score[index] ? {color: green500} : null}>{char || 'GO AWAY'}</span>)
       }
@@ -25,4 +23,3 @@ Guess.propTypes = {
 }
 
 export default Guess
-

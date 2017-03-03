@@ -1,11 +1,10 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import Editor from './Editor'
 import Controls from './Controls'
 import RunningIndicator from './RunningIndicator'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import Snackbar from 'material-ui/Snackbar'
-import {redA100} from 'material-ui/styles/colors'
-
+import { redA100 } from 'material-ui/styles/colors'
 
 const Agent = ({ program, setProgram, error, setError, running, start, stop, muiTheme }) => {
   const style = {
@@ -22,10 +21,10 @@ const Agent = ({ program, setProgram, error, setError, running, start, stop, mui
     backgroundColor: redA100
   }
   return (
-    <div className="agent" style={style}>
-      <Controls start={start} stop={stop}/>
-      <RunningIndicator on={running}/>
-      <Editor value={program} onChange={setProgram}/>
+    <div className='agent' style={style}>
+      <Controls start={start} stop={stop} />
+      <RunningIndicator on={running} />
+      <Editor value={program} onChange={setProgram} />
       <Snackbar
         open={error !== null}
         message={error ? error.toString() : ''}
@@ -33,7 +32,7 @@ const Agent = ({ program, setProgram, error, setError, running, start, stop, mui
         bodyStyle={errorStyle}
       />
     </div>
-    )
+  )
 }
 
 Agent.propTypes = {

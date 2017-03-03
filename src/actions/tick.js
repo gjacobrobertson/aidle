@@ -5,14 +5,13 @@ import InvalidProgramError from '../lib/InvalidProgramError'
 import cleanState from '../lib/cleanState'
 import * as actions from './index'
 
-
-const tick = createAction('TICK');
+const tick = createAction('TICK')
 
 const handleUserAction = (dispatch, action) => {
   if (isFSA(action)) {
     return dispatch(action)
   } else {
-    return dispatch(actions.agent.stop(new InvalidProgramError("Agent did not return an action")))
+    return dispatch(actions.agent.stop(new InvalidProgramError('Agent did not return an action')))
   }
 }
 

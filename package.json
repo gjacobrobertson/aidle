@@ -42,6 +42,7 @@
     "html-webpack-plugin": "^2.26.0",
     "node-sass": "^4.4.0",
     "sass-loader": "^4.1.1",
+    "standard": "^9.0.0",
     "style-loader": "^0.13.1",
     "webpack-bundle-size-analyzer": "^2.5.0",
     "webpack-dev-server": "^1.16.2"

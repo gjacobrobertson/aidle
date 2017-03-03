@@ -8,9 +8,9 @@ const RunningIndicator = ({on, muiTheme}) => {
     backgroundColor: muiTheme.palette.borderColor
   }
   if (on) {
-    return <LinearProgress key="on" style={style} mode="indeterminate"/>
+    return <LinearProgress key='on' style={style} mode='indeterminate' />
   } else {
-    return <LinearProgress key="off" style={style} mode="determinate"/>
+    return <LinearProgress key='off' style={style} mode='determinate' />
   }
 }
 

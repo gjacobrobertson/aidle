@@ -16,13 +16,12 @@ const Game = ({muiTheme, cash, guesses, onGuess}) => {
     flexDirection: 'column'
   }
   return (
-    <div className="game" style={style}>
-      <ScoreBar cash={cash}/>
-      <GuessList guesses={guesses}/>
-      <GuessControl onGuess={onGuess}/>
+    <div className='game' style={style}>
+      <ScoreBar cash={cash} />
+      <GuessList guesses={guesses} />
+      <GuessControl onGuess={onGuess} />
     </div>
   )
 }
 
 export default muiThemeable()(Game)
-

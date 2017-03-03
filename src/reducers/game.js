@@ -5,7 +5,6 @@ import padEnd from 'pad-end'
 import Secret from '../lib/secret'
 import cleanState from '../lib/cleanState'
 
-
 const secretLength = 5
 const maxGuesses = 10
 
@@ -45,7 +44,7 @@ const reducer = handleActions({
     if (correct === secretLength || nextState.guesses.length >= maxGuesses) {
       nextState = reset(nextState)
     }
-    return nextState;
+    return nextState
   }
 }, initialState)
 

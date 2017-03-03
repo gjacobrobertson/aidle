@@ -27,5 +27,5 @@ export default {
     disabledColor: blueGrey500,
     pickerHeaderColor: purple500,
     clockCircleColor: purple500
-  },
-};
+  }
+}

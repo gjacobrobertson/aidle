@@ -10,17 +10,17 @@ const initialState = {
   program: initialProgram,
   act: null,
   error: null,
-  isRunning: function() {
+  isRunning: function () {
     return this.act !== null
   }
 }
-const  reducer = handleActions({
+const reducer = handleActions({
   AGENT_SET_PROGRAM: (state, {payload: program}) => ({...state, program}),
   AGENT_SET_ERROR: (state, {payload: error}) => ({...state, error}),
   AGENT_START: (state) => {
     try {
       let act = cleanEval(state.program)
-      if (!act instanceof Function) {
+      if (!(act instanceof Function)) {
         throw new InvalidProgramError('Program must define act function')
       }
       return {...state, act, error: null}
@@ -28,9 +28,9 @@ const  reducer = handleActions({
       return {...state, error, act: null}
     }
   },
-  AGENT_STOP: (state, {payload: error=null}) => {
+  AGENT_STOP: (state, {payload: error = null}) => {
     return {...state, error, act: null}
   }
-}, initialState);
+}, initialState)
 
-export default reducer;
+export default reducer

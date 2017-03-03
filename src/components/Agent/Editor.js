@@ -17,8 +17,8 @@ const style = {
 
 const Editor = (props) => {
   return (
-    <div className="editor" style={style}>
-      <CodeMirror {...props} options={options}/>
+    <div className='editor' style={style}>
+      <CodeMirror {...props} options={options} />
     </div>
   )
 }

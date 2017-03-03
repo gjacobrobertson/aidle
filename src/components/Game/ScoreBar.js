@@ -3,7 +3,6 @@ import FontIcon from 'material-ui/FontIcon'
 import {green500} from 'material-ui/styles/colors'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 
-
 const ScoreBar = ({cash, muiTheme}) => {
   const style = {
     borderBottomWidth: 4,
@@ -14,8 +13,8 @@ const ScoreBar = ({cash, muiTheme}) => {
     alignItems: 'center'
   }
   return (
-    <div className="score-bar" style={style}>
-      <FontIcon className="material-icons" color={green500}>attach_money</FontIcon>
+    <div className='score-bar' style={style}>
+      <FontIcon className='material-icons' color={green500}>attach_money</FontIcon>
       <span>{cash}</span>
     </div>
   )

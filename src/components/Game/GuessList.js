@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react'
-import Guess, {GuessType} from './Guess'
+import Guess from './Guess'
 import { black } from 'material-ui/styles/colors'
 
 const GuessList = ({guesses}) => {
@@ -9,12 +9,12 @@ const GuessList = ({guesses}) => {
     backgroundColor: black
   }
 
-  const items = guesses.map( ({value, score}, idx) =>
-    <Guess key={guesses.length - idx} value={value} score={score}/>
+  const items = guesses.map(({value, score}, idx) =>
+    <Guess key={guesses.length - idx} value={value} score={score} />
   )
 
   return (
-    <div className="guess-list" style={style}>
+    <div className='guess-list' style={style}>
       {items}
     </div>
   )

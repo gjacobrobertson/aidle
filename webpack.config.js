@@ -1,9 +1,8 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const BUILD_DIR = path.resolve(__dirname, 'build');
-const APP_DIR = path.resolve(__dirname, 'src');
+const BUILD_DIR = path.resolve(__dirname, 'build')
+const APP_DIR = path.resolve(__dirname, 'src')
 
 module.exports = {
   entry: `${APP_DIR}/index.js`,
@@ -15,7 +14,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: `${APP_DIR}/index.html.ejs`,
-      inject: 'body',
+      inject: 'body'
     })
   ],
   module: {
@@ -27,12 +26,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.css$/,
-        loaders: ["style-loader", "css-loader"]
+        loaders: ['style-loader', 'css-loader']
       }
     ]
   }
-};
+}

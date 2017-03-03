@@ -4,25 +4,25 @@ import TextField from 'material-ui/TextField'
 import FlatButton from 'material-ui/FlatButton'
 
 class GuessControl extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {value: ''}
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   }
 
-  onChange(event) {
+  onChange (event) {
     this.setState({value: event.target.value})
   }
 
-  onSubmit(event){
+  onSubmit (event) {
     event.preventDefault()
     this.setState({value: ''})
     this.props.onGuess(this.state.value)
   }
 
-  render() {
-    const {muiTheme, onGuess} = this.props
+  render () {
+    const {muiTheme} = this.props
     const style = {
       borderTopWidth: 4,
       borderTopStyle: 'solid',
@@ -32,9 +32,9 @@ class GuessControl extends Component {
     }
 
     return (
-      <form className="guess-control" style={style} onSubmit={this.onSubmit}>
+      <form className='guess-control' style={style} onSubmit={this.onSubmit}>
         <TextField
-          id="guess-text-field"
+          id='guess-text-field'
           value={this.state.value}
           onChange={this.onChange}
           style={{
@@ -43,7 +43,7 @@ class GuessControl extends Component {
             position: 'relative'
           }} />
         <FlatButton
-          label="Guess"
+          label='Guess'
           backgroundColor={muiTheme.palette.primary1Color}
           hoverColor={muiTheme.palette.primary2Color}
           onClick={this.onSubmit}

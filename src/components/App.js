@@ -10,11 +10,11 @@ const App = ({muiTheme}) => {
     display: 'flex',
     flex: 1,
     flexDirection: 'row',
-    height: '100%',
+    height: '100%'
   }
   return (
-    <div className="app" style={style}>
-      <Game/>
+    <div className='app' style={style}>
+      <Game />
       <Agent />
     </div>
   )
