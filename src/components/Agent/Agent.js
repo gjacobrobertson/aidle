@@ -20,6 +20,7 @@ const Agent = ({ program, setProgram, error, setError, running, start, stop, mui
   const errorStyle = {
     backgroundColor: redA100
   }
+
   return (
     <div className='agent' style={style}>
       <Controls start={start} stop={stop} />

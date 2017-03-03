@@ -3,7 +3,7 @@ import FontIcon from 'material-ui/FontIcon'
 import IconButton from 'material-ui/IconButton'
 import {green500, red500} from 'material-ui/styles/colors'
 
-const Controls = ({running, stop, start}) => {
+const Controls = ({stop, start}) => {
   return (
     <div className='controls'>
       <IconButton>
