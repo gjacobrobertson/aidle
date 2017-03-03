@@ -5,8 +5,8 @@ import padEnd from 'pad-end'
 import Secret from '../lib/secret'
 import cleanState from '../lib/cleanState'
 
-const secretLength = 5
-const maxGuesses = 10
+const secretLength = 50
+const maxGuesses = 100
 
 const reset = (state) => {
   return {
@@ -52,6 +52,6 @@ export default reducer
 
 export const transform = createTransform(
   (state) => cleanState({game: state}).game,
-  (state) => ({...reset(state), cash: Big(state.score)}),
+  (state) => ({...reset(state), cash: Big(state.cash)}),
   {whitelist: ['game']}
 )
