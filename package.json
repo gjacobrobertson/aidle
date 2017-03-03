@@ -1,0 +1,49 @@
+{
+  "name": "aidle",
+  "version": "0.0.1",
+  "description": "User programmable idle game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server -d",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "webpack": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "big.js": "^3.1.3",
+    "bluebird": "^3.4.7",
+    "clone": "^2.1.0",
+    "flux-standard-action": "^1.0.0",
+    "material-ui": "^0.16.7",
+    "pad-end": "^1.0.2",
+    "react": "^15.4.2",
+    "react-codemirror": "^0.3.0",
+    "react-dom": "^15.4.2",
+    "react-notification": "^6.6.0",
+    "react-redux": "^5.0.2",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.2.0",
+    "redux-persist": "^4.4.2",
+    "redux-thunk": "^2.1.0",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "flow-bin": "^0.37.0",
+    "html-webpack-plugin": "^2.26.0",
+    "node-sass": "^4.4.0",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "webpack-bundle-size-analyzer": "^2.5.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

@@ -1,0 +1,7 @@
+@import "~codemirror/lib/codemirror.css";
+@import "fonts";
+@import "reset";
+
+.ReactCodeMirror, .CodeMirror {
+  height: 100%;
+}
