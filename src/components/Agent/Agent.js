@@ -8,9 +8,9 @@ import { redA100 } from 'material-ui/styles/colors'
 
 const Agent = ({ program, setProgram, error, setError, running, start, stop, muiTheme }) => {
   const style = {
+    width: '50%',
     display: 'flex',
     flexDirection: 'column',
-    flex: 1,
     borderColor: muiTheme.palette.borderColor,
     borderStyle: 'solid',
     borderWidth: 0,

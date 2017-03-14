@@ -6,12 +6,12 @@ import GuessControl from './GuessControl'
 
 const Game = ({muiTheme, cash, guesses, onGuess}) => {
   const style = {
+    width: '50%',
     backgroundColor: muiTheme.palette.canvasColor,
     borderColor: muiTheme.palette.borderColor,
     borderStyle: 'solid',
     borderWidth: 0,
     borderRightWidth: 2,
-    flex: 1,
     display: 'flex',
     flexDirection: 'column'
   }
