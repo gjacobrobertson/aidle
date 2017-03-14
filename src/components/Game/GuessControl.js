@@ -23,32 +23,36 @@ class GuessControl extends Component {
 
   render () {
     const {muiTheme} = this.props
-    const style = {
-      borderTopWidth: 4,
-      borderTopStyle: 'solid',
-      borderTopColor: muiTheme.palette.borderColor,
-      display: 'flex',
-      alignItems: 'stretch'
+
+    const styles = {
+      root: {
+        display: 'flex',
+        alignItems: 'stretch'
+      },
+      input: {
+        flex: 1,
+        margin: '0px 12px',
+        position: 'relative',
+      },
+      button: {
+        height: 'auto',
+        borderRadius: 0
+      }
     }
 
     return (
-      <form className='guess-control' style={style} onSubmit={this.onSubmit}>
+      <form className='guess-control' style={styles.root} onSubmit={this.onSubmit}>
         <TextField
+          style={styles.input}
           id='guess-text-field'
           value={this.state.value}
-          onChange={this.onChange}
-          style={{
-            flex: 1,
-            margin: '0px 12px',
-            position: 'relative'
-          }} />
+          onChange={this.onChange} />
         <FlatButton
+          style={styles.button}
           label='Guess'
           backgroundColor={muiTheme.palette.primary1Color}
           hoverColor={muiTheme.palette.primary2Color}
-          onClick={this.onSubmit}
-          style={{borderRadius: 0, height: 'auto'}}
-        />
+          onClick={this.onSubmit} />
       </form>
     )
   }

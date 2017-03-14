@@ -2,19 +2,14 @@ import React, { PropTypes } from 'react'
 import Editor from './Editor'
 import Controls from './Controls'
 import RunningIndicator from './RunningIndicator'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import Snackbar from 'material-ui/Snackbar'
 import { redA100 } from 'material-ui/styles/colors'
 
-const Agent = ({ program, setProgram, error, setError, running, start, stop, muiTheme }) => {
+const Agent = ({ program, setProgram, error, setError, running, start, stop }) => {
   const style = {
-    width: '50%',
+    flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    borderColor: muiTheme.palette.borderColor,
-    borderStyle: 'solid',
-    borderWidth: 0,
-    borderLeftWidth: 2
   }
 
   const errorStyle = {
@@ -23,8 +18,7 @@ const Agent = ({ program, setProgram, error, setError, running, start, stop, mui
 
   return (
     <div className='agent' style={style}>
-      <Controls start={start} stop={stop} />
-      <RunningIndicator on={running} />
+      <Controls start={start} stop={stop} running={running} />
       <Editor value={program} onChange={setProgram} />
       <Snackbar
         open={error !== null}
@@ -44,4 +38,4 @@ Agent.propTypes = {
   stop: PropTypes.func.isRequired
 }
 
-export default muiThemeable()(Agent)
+export default (Agent)

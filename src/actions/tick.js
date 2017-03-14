@@ -1,6 +1,5 @@
 import { createAction } from 'redux-actions'
 import { isFSA } from 'flux-standard-action'
-import Promise from 'bluebird'
 import InvalidProgramError from '../lib/InvalidProgramError'
 import cleanState from '../lib/cleanState'
 import * as actions from './index'
@@ -22,12 +21,11 @@ export default (dispatch, getState) => {
     try {
       let action = agent.act(cleanState(state), actions)
       handleUserAction(dispatch, action)
-    } catch(err) {
+    } catch (err) {
       dispatch(actions.agent.stop(err))
     } finally {
       let dt = Date.now() - state.tick.time
-      return dispatch(tick(dt))
+      dispatch(tick(dt))
     }
   }
-
 }
