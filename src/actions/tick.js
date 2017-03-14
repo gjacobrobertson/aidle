@@ -9,27 +9,25 @@ const tick = createAction('TICK')
 
 const handleUserAction = (dispatch, action) => {
   if (isFSA(action)) {
-    return dispatch(action)
+    dispatch(action)
   } else {
-    return dispatch(actions.agent.stop(new InvalidProgramError('Agent did not return an action')))
+    throw new InvalidProgramError('Agent did not return an action')
   }
 }
 
 export default (dispatch, getState) => {
   let state = getState()
-  return Promise.resolve(state)
-    .then(state => {
-      let { agent } = state
-      if (agent.isRunning()) {
-        let action = agent.act(cleanState(state), actions)
-        handleUserAction(dispatch, action)
-      }
-    })
-    .catch(err => {
-      return dispatch(actions.agent.stop(err))
-    })
-    .finally(() => {
+  let { agent } = state
+  if (agent.isRunning()) {
+    try {
+      let action = agent.act(cleanState(state), actions)
+      handleUserAction(dispatch, action)
+    } catch(err) {
+      dispatch(actions.agent.stop(err))
+    } finally {
       let dt = Date.now() - state.tick.time
       return dispatch(tick(dt))
-    })
+    }
+  }
+
 }
