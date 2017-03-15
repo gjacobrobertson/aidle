@@ -3,7 +3,7 @@ import muiThemeable from 'material-ui/styles/muiThemeable'
 import { Tabs, Tab } from 'material-ui/Tabs'
 import FontIcon from 'material-ui/FontIcon'
 import { SplitView, TabTemplate } from '../components'
-import { Game, Agent } from '../containers'
+import { Game, Agent, Settings } from '../containers'
 
 const App = ({ muiTheme }) => {
 
@@ -15,12 +15,13 @@ const App = ({ muiTheme }) => {
       height: '100%',
       display: 'flex'
     },
-    tabs: {
+    pane: {
       flex: '0 0 50%',
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      overflow: 'hidden',
     },
-    tabContent: {
+    tab: {
       flex: 1,
       display: 'flex',
       flexDirection: 'column'
@@ -30,17 +31,17 @@ const App = ({ muiTheme }) => {
   return (
     <div style={styles.root}>
       <Tabs
-        style={styles.tabs}
-        contentContainerStyle={styles.tabContent}
+        style={styles.pane}
+        contentContainerStyle={styles.tab}
         tabTemplate={TabTemplate}>
         <Tab icon={<FontIcon className="material-icons">games</FontIcon>}>
           <Game />
         </Tab>
         <Tab icon={<FontIcon className="material-icons">settings</FontIcon>}>
-          <p> Settings Placeholder </p>
+          <Settings />
         </Tab>
       </Tabs>
-      <Agent />
+      <Agent style={styles.pane}/>
     </div>
   )
 }

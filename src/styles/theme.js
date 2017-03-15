@@ -19,5 +19,8 @@ export default {
     accent1Color: amberA200,
     accent2Color: amberA400,
     accent3Color: amberA100,
+  },
+  toolbar: {
+    height: 48
   }
 }

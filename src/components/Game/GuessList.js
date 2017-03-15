@@ -6,7 +6,6 @@ const GuessList = ({guesses}) => {
   const style = {
     flex: 1,
     overflowY: 'auto',
-    backgroundColor: black
   }
 
   const items = guesses.map(({value, score}, idx) =>

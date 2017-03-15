@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import TextField from 'material-ui/TextField'
-import FlatButton from 'material-ui/FlatButton'
+import RaisedButton from 'material-ui/RaisedButton'
 
 class GuessControl extends Component {
   constructor (props) {
@@ -27,16 +26,15 @@ class GuessControl extends Component {
     const styles = {
       root: {
         display: 'flex',
-        alignItems: 'stretch'
+        alignItems: 'center',
+        padding: '0px 24px',
       },
       input: {
         flex: 1,
-        margin: '0px 12px',
+        marginRight: 24,
         position: 'relative',
       },
       button: {
-        height: 'auto',
-        borderRadius: 0
       }
     }
 
@@ -47,12 +45,11 @@ class GuessControl extends Component {
           id='guess-text-field'
           value={this.state.value}
           onChange={this.onChange} />
-        <FlatButton
+        <RaisedButton
           style={styles.button}
           label='Guess'
-          backgroundColor={muiTheme.palette.primary1Color}
-          hoverColor={muiTheme.palette.primary2Color}
-          onClick={this.onSubmit} />
+          primary={true}
+          onTouchTap={this.onSubmit} />
       </form>
     )
   }
@@ -62,4 +59,4 @@ GuessControl.propTypes = {
   onGuess: PropTypes.func.isRequired
 }
 
-export default muiThemeable()(GuessControl)
+export default GuessControl

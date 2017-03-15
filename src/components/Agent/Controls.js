@@ -7,12 +7,8 @@ import {green500, red500} from 'material-ui/styles/colors'
 import If from '../If'
 
 const Controls = ({stop, start, running}) => {
-  const style = {
-    height: 48
-  }
-  
   return (
-    <Toolbar style={style}>
+    <Toolbar>
       <ToolbarGroup firstChild={true}>
         <FontIcon className='material-icons' onClick={start} color={green500}>play_arrow</FontIcon>
         <FontIcon className='material-icons' onClick={stop} color={red500}>stop</FontIcon>

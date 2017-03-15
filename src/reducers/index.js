@@ -9,6 +9,13 @@ const reducer = combineReducers({
   tick
 })
 
-export default reducer
+const rootReducer = (state, action) => {
+  if (action.type === 'HARD_RESET') {
+    state = undefined
+  }
+  return reducer(state, action)
+}
+
+export default rootReducer
 
 export const transforms = [transform]
