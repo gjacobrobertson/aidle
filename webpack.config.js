@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const BUILD_DIR = path.resolve(__dirname, 'build')
 const APP_DIR = path.resolve(__dirname, 'src')
@@ -15,14 +16,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${APP_DIR}/index.html.ejs`,
       inject: 'body'
-    })
+    }),
   ],
   module: {
     loaders: [
       {
         test: /\.js$/,
         include: APP_DIR,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
