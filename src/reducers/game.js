@@ -16,7 +16,11 @@ const reset = (state) => {
   }
 }
 
-const initialState = reset({cash: Big(0), secretLength, maxGuesses})
+const initialState = reset({
+  cash: Big(0),
+  completions: 0,
+  secretLength,
+  maxGuesses})
 
 const sanitize = (payload) => {
   payload = payload.toString()
@@ -40,6 +44,9 @@ const reducer = handleActions({
       ...state,
       guesses: [{ value, score }, ...state.guesses],
       cash: state.cash.plus(Big(2).pow(correct))
+    }
+    if (correct == secretLength) {
+      nextState.completions = nextState.completions + 1
     }
     if (correct === secretLength || nextState.guesses.length >= maxGuesses) {
       nextState = reset(nextState)

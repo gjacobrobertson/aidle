@@ -1,5 +1,4 @@
 import React from 'react'
-import ScoreBar from './ScoreBar'
 import GuessList from './GuessList'
 import GuessControl from './GuessControl'
 
@@ -10,7 +9,7 @@ const Game = ({cash, guesses, onGuess}) => {
     flexDirection: 'column'
   }
   return (
-    <div className='game' style={style}>
+    <div style={style}>
       <GuessList guesses={guesses} />
       <GuessControl onGuess={onGuess} />
     </div>

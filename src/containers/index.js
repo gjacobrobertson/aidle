@@ -1,3 +1,3 @@
-export { default as Game } from './Game'
-export { default as Agent } from './Agent'
+export * from './Agent'
+export * from './Game'
 export { default as Settings } from './Settings'

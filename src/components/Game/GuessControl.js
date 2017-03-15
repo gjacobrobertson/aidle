@@ -39,7 +39,7 @@ class GuessControl extends Component {
     }
 
     return (
-      <form className='guess-control' style={styles.root} onSubmit={this.onSubmit}>
+      <form style={styles.root} onSubmit={this.onSubmit}>
         <TextField
           style={styles.input}
           id='guess-text-field'

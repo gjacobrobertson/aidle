@@ -15,17 +15,13 @@ const style = {
   flex: 1
 }
 
-const Editor = (props) => {
-  return (
-    <div className='editor' style={style}>
-      <CodeMirror {...props} options={options} />
-    </div>
-  )
+const AgentEditor = (props) => {
+  return <CodeMirror {...props} options={options} style={style}/>
 }
 
-Editor.propTypes = {
+AgentEditor.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
 }
 
-export default Editor
+export default AgentEditor

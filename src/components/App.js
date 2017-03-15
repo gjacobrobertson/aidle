@@ -1,9 +1,12 @@
 import React from 'react'
 import muiThemeable from 'material-ui/styles/muiThemeable'
-import { Tabs, Tab } from 'material-ui/Tabs'
 import FontIcon from 'material-ui/FontIcon'
+import { Tabs, Tab } from 'material-ui/Tabs'
+import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar'
 import { SplitView, TabTemplate } from '../components'
-import { Game, Agent, Settings } from '../containers'
+import { AgentControls, AgentEditor, AgentError } from '../containers/Agent'
+import { Game, GameStatus } from '../containers/Game'
+import Settings from '../containers/Settings'
 
 const App = ({ muiTheme }) => {
 
@@ -13,13 +16,8 @@ const App = ({ muiTheme }) => {
       color: muiTheme.palette.textColor,
       fontFamily: muiTheme.fontFamily,
       height: '100%',
-      display: 'flex'
-    },
-    pane: {
-      flex: '0 0 50%',
       display: 'flex',
-      flexDirection: 'column',
-      overflow: 'hidden',
+      flexDirection: 'column'
     },
     tab: {
       flex: 1,
@@ -30,18 +28,27 @@ const App = ({ muiTheme }) => {
 
   return (
     <div style={styles.root}>
+      <Toolbar>
+        <AgentControls parent={<ToolbarGroup firstChild={true}/>}/>
+        <ToolbarGroup>
+          <GameStatus />
+        </ToolbarGroup>
+      </Toolbar>
       <Tabs
-        style={styles.pane}
+        style={styles.tab}
         contentContainerStyle={styles.tab}
         tabTemplate={TabTemplate}>
-        <Tab icon={<FontIcon className="material-icons">games</FontIcon>}>
+        <Tab icon={<FontIcon className="material-icons">important_devices</FontIcon>}>
           <Game />
+        </Tab>
+        <Tab icon={<FontIcon className="material-icons">code</FontIcon>}>
+          <AgentEditor />
         </Tab>
         <Tab icon={<FontIcon className="material-icons">settings</FontIcon>}>
           <Settings />
         </Tab>
       </Tabs>
-      <Agent style={styles.pane}/>
+      <AgentError />
     </div>
   )
 }

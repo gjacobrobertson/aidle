@@ -8,8 +8,7 @@ const Guess = ({value, score}) => {
     fontFamily: 'Roboto Mono, monospace'
   }
   return (
-
-    <div className='guess' style={style}>
+    <div style={style}>
       {value.map((char, index) =>
         <span key={index} style={score[index] ? {color: green500} : null}>{char || 'GO AWAY'}</span>)
       }
