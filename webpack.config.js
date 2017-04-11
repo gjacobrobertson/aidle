@@ -19,7 +19,8 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
-      reportFilename:'report.html'
+      reportFilename: 'report.html',
+      openAnalyzer: false
     })
   ],
   module: {

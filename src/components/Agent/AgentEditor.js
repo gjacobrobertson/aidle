@@ -16,7 +16,7 @@ const style = {
 }
 
 const AgentEditor = (props) => {
-  return <CodeMirror {...props} options={options} style={style}/>
+  return <CodeMirror {...props} options={options} style={style} />
 }
 
 AgentEditor.propTypes = {

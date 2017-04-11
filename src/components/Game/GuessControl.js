@@ -21,18 +21,16 @@ class GuessControl extends Component {
   }
 
   render () {
-    const {muiTheme} = this.props
-
     const styles = {
       root: {
         display: 'flex',
         alignItems: 'center',
-        padding: '0px 24px',
+        padding: '0px 24px'
       },
       input: {
         flex: 1,
         marginRight: 24,
-        position: 'relative',
+        position: 'relative'
       },
       button: {
       }
@@ -48,7 +46,7 @@ class GuessControl extends Component {
         <RaisedButton
           style={styles.button}
           label='Guess'
-          primary={true}
+          primary
           onTouchTap={this.onSubmit} />
       </form>
     )

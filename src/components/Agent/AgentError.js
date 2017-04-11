@@ -15,10 +15,9 @@ const AgentError = ({error, setError}) => {
   />
 }
 
-
 AgentError.propTypes = {
   setError: PropTypes.func.isRequired,
-  error: PropTypes.object,
+  error: PropTypes.object
 }
 
 export default AgentError

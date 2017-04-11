@@ -1,13 +1,9 @@
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import {
   amberA100, amberA200, amberA400,
   purple500, purple700,
-  blueGrey500, blueGrey900,
-  grey600,
-  fullWhite
+  grey600
 } from 'material-ui/styles/colors'
-
-import {fade} from 'material-ui/utils/colorManipulator'
 
 export default {
   ...darkBaseTheme,
@@ -18,7 +14,7 @@ export default {
     primary3Color: grey600,
     accent1Color: amberA200,
     accent2Color: amberA400,
-    accent3Color: amberA100,
+    accent3Color: amberA100
   },
   toolbar: {
     height: 48

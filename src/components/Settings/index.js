@@ -10,7 +10,7 @@ const styles = {
 }
 
 class Settings extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       open: false
@@ -20,29 +20,29 @@ class Settings extends Component {
     this.onReset = this.onReset.bind(this)
   }
 
-  openDialog() {
+  openDialog () {
     this.setState({ open: true })
   }
 
-  closeDialog() {
+  closeDialog () {
     this.setState({ open: false })
   }
 
-  onReset() {
+  onReset () {
     this.closeDialog()
     this.props.reset()
   }
 
-  render() {
+  render () {
     const actions = [
       <FlatButton
         label='Cancel'
-        primary={true}
+        primary
         onTouchTap={this.closeDialog}
       />,
       <FlatButton
         label='Reset'
-        primary={true}
+        primary
         onTouchTap={this.onReset}
       />
     ]
@@ -50,7 +50,7 @@ class Settings extends Component {
       <div style={styles.root}>
         <RaisedButton
           label='Hard Reset'
-          primary={true}
+          primary
           onTouchTap={this.openDialog} />
         <Dialog
           title='Hard Reset Game'

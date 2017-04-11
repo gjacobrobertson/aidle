@@ -1,11 +1,10 @@
 import React, {PropTypes} from 'react'
 import Guess from './Guess'
-import { black } from 'material-ui/styles/colors'
 
 const GuessList = ({guesses}) => {
   const style = {
     flex: 1,
-    overflowY: 'auto',
+    overflowY: 'auto'
   }
 
   const items = guesses.map(({value, score}, idx) =>

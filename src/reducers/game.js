@@ -45,7 +45,7 @@ const reducer = handleActions({
       guesses: [{ value, score }, ...state.guesses],
       cash: state.cash.plus(Big(2).pow(correct))
     }
-    if (correct == secretLength) {
+    if (correct === secretLength) {
       nextState.completions = nextState.completions + 1
     }
     if (correct === secretLength || nextState.guesses.length >= maxGuesses) {

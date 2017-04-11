@@ -18,7 +18,8 @@ class Secret extends Array {
   }
 
   static generate (length) {
-    return new Secret(length).fill().map(this.randomCode)
+    return new Secret(length).fill()
+      .map(this.randomCode)
       .map(c => String.fromCharCode(c))
   }
 }
