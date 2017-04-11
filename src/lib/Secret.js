@@ -13,10 +13,6 @@ class Secret extends Array {
     return [...guess] === this
   }
 
-  // static randomCode() {
-  //   return 33 + Math.floor(Math.random() * 94)
-  // }
-
   static randomCode () {
     return 65 + Math.floor(Math.random() * 26)
   }
