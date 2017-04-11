@@ -17,6 +17,10 @@ module.exports = {
       template: `${APP_DIR}/index.html.ejs`,
       inject: 'body'
     }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      reportFilename:'report.html'
+    })
   ],
   module: {
     loaders: [
