@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import * as actions from '../../actions'
 import { AgentControls } from '../../components'
 
-const mapStateToProps = ({ agent }) => ({ running: agent.isRunning() })
+const mapStateToProps = state => ({ running: state.agent.running })
 
 const mapDispatchToProps = (dispatch) => {
   return {

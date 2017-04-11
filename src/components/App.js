@@ -7,6 +7,7 @@ import { TabTemplate } from '../components'
 import { AgentControls, AgentEditor, AgentError } from '../containers/Agent'
 import { Game, GameStatus } from '../containers/Game'
 import Settings from '../containers/Settings'
+import Upgrades from '../containers/Upgrades'
 
 const App = ({ muiTheme }) => {
   const styles = {
@@ -39,6 +40,9 @@ const App = ({ muiTheme }) => {
         tabTemplate={TabTemplate}>
         <Tab icon={<FontIcon className='material-icons'>important_devices</FontIcon>}>
           <Game />
+        </Tab>
+        <Tab icon={<FontIcon className='material-icons'>trending_up</FontIcon>}>
+          <Upgrades />
         </Tab>
         <Tab icon={<FontIcon className='material-icons'>code</FontIcon>}>
           <AgentEditor />

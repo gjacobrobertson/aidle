@@ -12,7 +12,7 @@ import './styles'
 import theme from './styles/theme'
 
 import reducer, {transforms} from './reducers'
-import tick from './actions/tick'
+import { act } from './actions/agent'
 
 import App from './components/App'
 
@@ -28,7 +28,7 @@ const store = createStore(
     autoRehydrate())
   )
 
-setInterval(store.dispatch, 100, tick)
+setInterval(store.dispatch, 100, act)
 persistStore(store, {transforms})
 
 render(

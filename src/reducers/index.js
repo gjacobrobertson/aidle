@@ -1,19 +1,17 @@
-import { combineReducers } from 'redux'
 import game, {transform} from './game'
-import tick from './tick'
 import agent from './agent'
-
-const reducer = combineReducers({
-  game,
-  agent,
-  tick
-})
+import upgrades from './upgrades'
 
 const rootReducer = (state, action) => {
+  state = state || {}
   if (action.type === 'HARD_RESET') {
-    state = undefined
+    state = {}
   }
-  return reducer(state, action)
+  return {
+    upgrades: upgrades(state.upgrades, action),
+    game: game(state.game, action, state.upgrades),
+    agent: agent(state.agent, action, state.upgrades)
+  }
 }
 
 export default rootReducer

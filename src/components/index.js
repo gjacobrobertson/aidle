@@ -1,5 +1,6 @@
 export * from './Game'
 export * from './Agent'
 export { default as Settings } from './Settings'
+export { default as Upgrades } from './Upgrades'
 export { default as If } from './If'
 export { default as TabTemplate } from './TabTemplate'

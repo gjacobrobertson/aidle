@@ -3,7 +3,7 @@ import { createTransform } from 'redux-persist'
 import Big from 'big.js'
 import padEnd from 'pad-end'
 import Secret from '../lib/secret'
-import cleanState from '../lib/cleanState'
+import clean from '../selectors/clean'
 
 const secretLength = 50
 const maxGuesses = 100
@@ -58,7 +58,7 @@ const reducer = handleActions({
 export default reducer
 
 export const transform = createTransform(
-  (state) => cleanState({game: state}).game,
+  (state) => clean({game: state}).game,
   (state) => ({...reset(state), cash: Big(state.cash)}),
   {whitelist: ['game']}
 )
