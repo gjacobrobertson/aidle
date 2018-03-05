@@ -4,28 +4,25 @@ import Big from 'big.js'
 import padEnd from 'pad-end'
 import Secret from '../lib/secret'
 import clean from '../selectors/clean'
-
-const secretLength = 50
-const maxGuesses = 100
+import { SECRET_LENGTH, MAX_GUESSES } from '../constants'
 
 const reset = (state) => {
   return {
     ...state,
-    secret: Secret.generate(secretLength),
+    secret: Secret.generate(SECRET_LENGTH),
     guesses: []
   }
 }
 
 const initialState = reset({
   cash: Big(0),
-  completions: 0,
-  secretLength,
-  maxGuesses})
+  completions: 0
+})
 
 const sanitize = (payload) => {
   payload = payload.toString()
-  payload = payload.slice(0, secretLength)
-  payload = padEnd(payload, secretLength, '_')
+  payload = payload.slice(0, SECRET_LENGTH)
+  payload = padEnd(payload, SECRET_LENGTH, '_')
   return payload
 }
 
@@ -45,10 +42,10 @@ const reducer = handleActions({
       guesses: [{ value, score }, ...state.guesses],
       cash: state.cash.plus(Big(2).pow(correct))
     }
-    if (correct === secretLength) {
+    if (correct === SECRET_LENGTH) {
       nextState.completions = nextState.completions + 1
     }
-    if (correct === secretLength || nextState.guesses.length >= maxGuesses) {
+    if (correct === SECRET_LENGTH || nextState.guesses.length >= MAX_GUESSES) {
       nextState = reset(nextState)
     }
     return nextState
